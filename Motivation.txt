@@ -1,0 +1,86 @@
+Motivation :
+See program output underneath for the results of the program. 
+The submitted program(“Assignment1.Rmd”) correctly predicts (“B A B A A E D B A A B C B A E E A B B B”) the outcome of the 20 requested test cases
+Please review Assignment1.Rmd for details. 
+The following approach has been taken in Assignment1.Rmd.
+1)	Download manually train and test data from location
+2)	Create test(from file) en train data(from file). Use all clean date
+3)	Create training an test dataset. Training data is divided in 2 subset. Subset one is for training data. Subset two is for validation/check dataset
+4)	Train model based on test and training data(subset on)
+5)	Create validation/check (clean) dataset.
+6)	Do a cross validation.
+
+From the model we created in step 4 we see an accuracy of greater than 0.9924523 the expected. See output of program ("MmdelFit result:")
+The expected  Sample Error Rate (“Error Rate=(1 – accuracy)”) will smaller than 0.0075477
+After cross validation (see output [1] "ConfMtrix:"). we see OOB(out-of-bag) estimate of  error rate: 0.68% which is 0.0068
+This is also close to 0, which also explains why wy correctly predict the outcome of the 20 requested test cases. 
+Als note that an “Accuracy : 1” (see output [1] "ConfMtrix:") which would indicate an Error Rate of 0 (1 – accuracy)
+Program output: 
+
+[1] "MmdelFit result:"
+  mtry  Accuracy     Kappa AccuracySD     KappaSD
+1    2 0.9924523 0.9904455 0.00180805 0.002282829
+2   28 0.9960009 0.9949382 0.00122786 0.001552565
+3   54 0.9924703 0.9904685 0.00247843 0.003136465
+[1] "Model resample:"
+   Accuracy     Kappa Resample
+1 0.9889550 0.9860219    Fold1
+2 0.9923534 0.9903286    Fold3
+3 0.9932031 0.9914027    Fold2
+4 0.9906463 0.9881685    Fold5
+5 0.9957555 0.9946300    Fold4
+[1] "Model result:"
+  mtry  Accuracy     Kappa   AccuracySD     KappaSD
+1    2 0.9838560 0.9795717 0.0033507281 0.004240783
+2   28 0.9921826 0.9901103 0.0025794478 0.003264646
+3   54 0.9881053 0.9849499 0.0008496396 0.001073990
+[1] "ConfMtrix:"
+Confusion Matrix and Statistics
+
+          Reference
+Prediction    A    B    C    D    E
+         A 1674    0    0    0    0
+         B    0 1139    0    0    0
+         C    0    0 1026    0    0
+         D    0    0    0  964    0
+         E    0    0    0    0 1082
+
+Overall Statistics
+                                     
+               Accuracy : 1          
+                 95% CI : (0.9994, 1)
+    No Information Rate : 0.2845     
+    P-Value [Acc > NIR] : < 2.2e-16  
+                                     
+                  Kappa : 1          
+ Mcnemar's Test P-Value : NA         
+
+Statistics by Class:
+
+                     Class: A Class: B Class: C Class: D Class: E
+Sensitivity            1.0000   1.0000   1.0000   1.0000   1.0000
+Specificity            1.0000   1.0000   1.0000   1.0000   1.0000
+Pos Pred Value         1.0000   1.0000   1.0000   1.0000   1.0000
+Neg Pred Value         1.0000   1.0000   1.0000   1.0000   1.0000
+Prevalence             0.2845   0.1935   0.1743   0.1638   0.1839
+Detection Rate         0.2845   0.1935   0.1743   0.1638   0.1839
+Detection Prevalence   0.2845   0.1935   0.1743   0.1638   0.1839
+Balanced Accuracy      1.0000   1.0000   1.0000   1.0000   1.0000
+[1] "Final Check:"
+
+Call:
+ randomForest(x = x, y = y, mtry = param$mtry) 
+               Type of random forest: classification
+                     Number of trees: 500
+No. of variables tried at each split: 28
+
+        OOB estimate of  error rate: 0.68%
+Confusion matrix:
+     A    B    C   D    E class.error
+A 1670    4    0   0    0 0.002389486
+B    7 1128    4   0    0 0.009657594
+C    0    5 1018   3    0 0.007797271
+D    0    0    7 954    3 0.010373444
+E    0    0    1   6 1075 0.006469501
+[1] "prediction:"
+ [1] B A B A A E D B A A B C B A E E A B B B
