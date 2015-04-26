@@ -1,0 +1,61 @@
+#This program created and tested with windows 7
+library(caret)
+setwd("C:/X/Prof/Course/Practical Machine Learning/Assignment")
+
+#Function to write result to file an print result also to screen
+pml_write_files = function(x){
+  n = length(x)
+  for(i in 1:n){
+    filename = paste0("problem_id_",i,".txt")
+    write.table(x[i],file=filename,quote=FALSE,row.names=FALSE,col.names=FALSE)
+	print(filename)
+	print(x[i])
+  }
+}
+
+#Download Training data en put in local directory and make clean dataset
+trainingInput <- read.table("./pml-training.csv",sep=",",na.strings = c("NA",""),header=TRUE)
+testing <- read.table("./pml-testing.csv",sep=",",na.strings = c("NA",""),header=TRUE)
+trainingData <- createDataPartition(trainingInput$classe, p=0.70, list=FALSE)
+training <- trainingInput[trainingData,]
+checking <- trainingInput[-trainingData,]
+
+training<-training[,colSums(is.na(training)) == 0]
+classe<-training$classe
+nums <- sapply(training, is.numeric)
+training<-cbind(classe,training[,nums])
+training$X<-training$num_window<-NULL
+
+testing<-testing[,colSums(is.na(testing)) == 0]
+tnums <- sapply(testing, is.numeric)
+testing<-testing[,tnums]
+testing$X<-testing$num_window<-NULL
+
+#Create model Use randomForest method
+modelFit <- train(training$classe~.,data=training, method="rf")
+print("MdelFit result:")
+print(modelFit$results)
+
+#Checking cross validation
+checking<-checking[,colSums(is.na(checking)) == 0]
+ch_classe<-checking$classe
+ch_nums <- sapply(checking, is.numeric)
+checking<-cbind(ch_classe,checking[,ch_nums])
+colnames(checking)[1]<-"classe"
+checking$X<-checking$num_window<-NULL
+tr_control <- trainControl(method = "cv", number = 5)
+#For crosvalidation create model use randomForest method
+checkModelFit <- train(checking$classe~.,data=checking, method="rf",trControl=tr_control)
+
+print("Model resample:")
+print(checkModelFit$resample)
+print("Model result:")
+print(checkModelFit$results)
+print("ConfMtrix:")
+print(confusionMatrix(predict(checkModelFit, newdata=checking), checking$classe))
+print("Final Check:")
+print(checkModelFit$finalModel)
+print("prediction:")
+test_prediction<-predict(modelFit, newdata=testing)
+print(test_prediction)
+pml_write_files(test_prediction)

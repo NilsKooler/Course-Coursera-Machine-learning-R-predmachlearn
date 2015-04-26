@@ -1,0 +1,340 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	color:#365F91;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Cambria","serif";
+	color:#4F81BD;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria","serif";
+	color:#365F91;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria","serif";
+	color:#4F81BD;
+	font-weight:bold;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 70.85pt 70.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=NL>
+
+<div class=WordSection1>
+
+<h1><span lang=EN-US>Motivation :</span></h1>
+
+<p class=MsoNormal><span lang=EN-US>See program output underneath for the
+results of the program. </span></p>
+
+<p class=MsoNormal><span lang=EN-US>The submitted program(“Assignment1.Rmd”)
+correctly predicts (“B A B A A E D B A A B C B A E E A B B B”) the outcome of
+the 20 requested test cases</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Please review Assignment1.Rmd for details. </span></p>
+
+<p class=MsoNormal><span lang=EN-US>The following approach has been taken in Assignment1.Rmd.</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span
+lang=EN-US>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Download manually train and test data from
+location</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Create test(from file) en train data(from file).
+Use all clean date</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US>3)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Create training an test dataset. Training data
+is divided in 2 subset. Subset one is for training data. Subset two is for
+validation/check dataset</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US>4)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Train model based on test and training data(subset
+on)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span
+lang=EN-US>5)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Create validation/check (clean) dataset.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=EN-US>6)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Do a cross validation.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>From the model we created in step 4 we see
+an accuracy of greater than 0.9924523 the expected. See output of program (&quot;MmdelFit
+result:&quot;)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The expected  Sample Error Rate (“Error
+Rate=(1 – accuracy)”) will smaller than 0.0075477</span></p>
+
+<p class=MsoNormal><span lang=EN-US>After cross validation (see output [1]
+&quot;ConfMtrix:&quot;). we see OOB(out-of-bag) estimate of  error rate: 0.68%
+which is 0.0068</span></p>
+
+<p class=MsoNormal><span lang=EN-US>This is also close to 0, which also
+explains why wy correctly predict the outcome of the 20 requested test cases. </span></p>
+
+<p class=MsoNormal><span lang=EN-US>Als note that an “Accuracy : 1” (see output
+[1] &quot;ConfMtrix:&quot;) which would indicate an Error Rate of 0 (1 –
+accuracy)</span></p>
+
+<h1><span lang=EN-US>Program output: </span></h1>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[1] &quot;MmdelFit result:&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>  mtry  Accuracy     Kappa AccuracySD    
+KappaSD</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1    2 0.9924523 0.9904455 0.00180805
+0.002282829</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2   28 0.9960009 0.9949382 0.00122786
+0.001552565</span></p>
+
+<p class=MsoNormal><span lang=EN-US>3   54 0.9924703 0.9904685 0.00247843
+0.003136465</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[1] &quot;Model resample:&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>   Accuracy     Kappa Resample</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1 0.9889550 0.9860219    Fold1</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2 0.9923534 0.9903286    Fold3</span></p>
+
+<p class=MsoNormal><span lang=EN-US>3 0.9932031 0.9914027    Fold2</span></p>
+
+<p class=MsoNormal><span lang=EN-US>4 0.9906463 0.9881685    Fold5</span></p>
+
+<p class=MsoNormal><span lang=EN-US>5 0.9957555 0.9946300    Fold4</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[1] &quot;Model result:&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>  mtry  Accuracy     Kappa   AccuracySD    
+KappaSD</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1    2 0.9838560 0.9795717 0.0033507281
+0.004240783</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2   28 0.9921826 0.9901103 0.0025794478
+0.003264646</span></p>
+
+<p class=MsoNormal><span lang=EN-US>3   54 0.9881053 0.9849499 0.0008496396
+0.001073990</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[1] &quot;ConfMtrix:&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Confusion Matrix and Statistics</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>          Reference</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Prediction    A    B    C    D    E</span></p>
+
+<p class=MsoNormal><span lang=EN-US>         A 1674    0    0    0    0</span></p>
+
+<p class=MsoNormal><span lang=EN-US>         B    0 1139    0    0    0</span></p>
+
+<p class=MsoNormal><span lang=EN-US>         C    0    0 1026    0    0</span></p>
+
+<p class=MsoNormal><span lang=EN-US>         D    0    0    0  964    0</span></p>
+
+<p class=MsoNormal><span lang=EN-US>         E    0    0    0    0 1082</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Overall Statistics</span></p>
+
+<p class=MsoNormal><span lang=EN-US>                                     </span></p>
+
+<p class=MsoNormal><span lang=EN-US>               Accuracy : 1          </span></p>
+
+<p class=MsoNormal><span lang=EN-US>                 95% CI : (0.9994, 1)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>    No Information Rate : 0.2845     </span></p>
+
+<p class=MsoNormal><span lang=EN-US>    P-Value [Acc &gt; NIR] : &lt; 2.2e-16  </span></p>
+
+<p class=MsoNormal><span lang=EN-US>                                     </span></p>
+
+<p class=MsoNormal><span lang=EN-US>                  Kappa : 1          </span></p>
+
+<p class=MsoNormal><span lang=EN-US> Mcnemar's Test P-Value : NA         </span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Statistics by Class:</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>                     Class: A Class: B
+Class: C Class: D Class: E</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Sensitivity            1.0000   1.0000  
+1.0000   1.0000   1.0000</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Specificity            1.0000   1.0000  
+1.0000   1.0000   1.0000</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Pos Pred Value         1.0000   1.0000  
+1.0000   1.0000   1.0000</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Neg Pred Value         1.0000   1.0000  
+1.0000   1.0000   1.0000</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Prevalence             0.2845   0.1935  
+0.1743   0.1638   0.1839</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Detection Rate         0.2845   0.1935  
+0.1743   0.1638   0.1839</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Detection Prevalence   0.2845   0.1935  
+0.1743   0.1638   0.1839</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Balanced Accuracy      1.0000   1.0000  
+1.0000   1.0000   1.0000</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[1] &quot;Final Check:&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Call:</span></p>
+
+<p class=MsoNormal><span lang=EN-US> randomForest(x = x, y = y, mtry =
+param$mtry) </span></p>
+
+<p class=MsoNormal><span lang=EN-US>               Type of random forest:
+classification</span></p>
+
+<p class=MsoNormal><span lang=EN-US>                     Number of trees: 500</span></p>
+
+<p class=MsoNormal><span lang=EN-US>No. of variables tried at each split: 28</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>        OOB estimate of  error rate: 0.68%</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Confusion matrix:</span></p>
+
+<p class=MsoNormal><span lang=EN-US>     A    B    C   D    E class.error</span></p>
+
+<p class=MsoNormal><span lang=EN-US>A 1670    4    0   0    0 0.002389486</span></p>
+
+<p class=MsoNormal><span lang=EN-US>B    7 1128    4   0    0 0.009657594</span></p>
+
+<p class=MsoNormal><span lang=EN-US>C    0    5 1018   3    0 0.007797271</span></p>
+
+<p class=MsoNormal><span lang=EN-US>D    0    0    7 954    3 0.010373444</span></p>
+
+<p class=MsoNormal><span lang=EN-US>E    0    0    1   6 1075 0.006469501</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[1] &quot;prediction:&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-US> [1] B A B A A E D B A A B C B A E E A B B
+B</span></p>
+
+</div>
+
+</body>
+
+</html>
